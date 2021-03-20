@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}
+Contacts
+{% endblock %}
+
+{% block content %}
+<h2 class="alert alert-dark text-center">Contacts</h2>
+    <div class="container">
+    <div class="row">
+        <div class="col">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Company</th>
+      <th scope="col">Mobile No</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for contact in contacts %}
+  <tr>
+      <th scope="row">{{ contact.pk }}</th>
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.company }}</td>
+      <td>{{ contact.mobile }}</td>
+      <td>
+            <div class="btn-group" role="group">
+         <a href="{% url 'del' contact.id %}" class="btn btn-outline-dark">Delete</a>
+         <a href="{% url 'update' contact.id %}" class="btn btn-outline-danger">Edit</a>
+              </div>
+
+
+      </td>
+    </tr>
+
+  {% endfor %}
+
+
+
+  </tbody>
+</table>
+        </div>
+
+    </div>
+    </div>
+
+{% endblock %}

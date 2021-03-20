@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Update Contact
+{% endblock %}
+
+{% block content %}
+    <h2 class="alert alert-dark">Update Contact</h2>
+<div class="container">
+<div class="row">
+    <div class="col-sm-12">
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input class="btn btn-success mt-4" type="submit" value="Update">
+    <a href="{% url 'home' %}" class="btn btn-outline-danger mt-4">Back To Home</a>
+</form>
+
+
+    </div>
+       {% if messages %}
+
+ {% for message in messages %}
+<span id="success_msg" class="alert alert-success {% if message.tags %}{{ message.tags }}{% endif %} m-4" >{{ message }}</span>
+ {% endfor %}
+
+        {% endif %}
+</div>
+</div>
+{% endblock %}
