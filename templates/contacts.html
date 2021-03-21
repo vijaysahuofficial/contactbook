@@ -4,8 +4,7 @@ Contacts
 {% endblock %}
 
 {% block content %}
-<h2 class="alert alert-dark text-center">Contacts</h2>
-    <div class="container">
+    <div class="container mt-4">
     <div class="row">
         <div class="col">
 <table class="table">
@@ -30,20 +29,24 @@ Contacts
          <a href="{% url 'del' contact.id %}" class="btn btn-outline-dark">Delete</a>
          <a href="{% url 'update' contact.id %}" class="btn btn-outline-danger">Edit</a>
               </div>
-
-
       </td>
     </tr>
-
   {% endfor %}
-
-
-
   </tbody>
 </table>
         </div>
 
     </div>
+
+{% if contacts.first == None %}
+
+<div class='container text-center mt-4'>
+  <h2>No Contact Found</h2>
+  <a href="{% url 'home' %}" class="btn btn-success mt-4">Back To Home</a>
+</div>
+
+{% endif %}
+
     </div>
 
 {% endblock %}
