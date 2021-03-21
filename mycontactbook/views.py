@@ -4,7 +4,6 @@ from .models import AddContact
 from django.contrib import messages
 
 
-
 def home_view(request, *args, **kwargs):
     form = AddContactForm()
     added_data = AddContact.objects.all()
@@ -21,6 +20,8 @@ def home_view(request, *args, **kwargs):
         'form': form,
     }
     return render(request, 'home.html', data)
+
+
 
 
 

@@ -7,11 +7,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 
     <title>{% block title %}
-    
+
     {% endblock %}</title>
 </head>
 <body>
 {% include 'header.html' %}
+<div class="text-center">
+<h6 class="mt-4 mb-4">
+Create by <a href="https://www.facebook.com/vijaysahuofficialpage" class="text-decoration-none blockquote-footer">Vijay Sahu</a>
+</h6>
+</div>
 {% block content %}
 
 {% endblock %}
