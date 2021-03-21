@@ -10,7 +10,7 @@ Contacts
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      {% comment %} <th scope="col">#</th> {% endcomment %}
       <th scope="col">Name</th>
       <th scope="col">Company</th>
       <th scope="col">Mobile No</th>
@@ -20,7 +20,7 @@ Contacts
   <tbody>
   {% for contact in contacts %}
   <tr>
-      <th scope="row">{{ contact.pk }}</th>
+      {% comment %} <th scope="row">{{ contact.pk }}</th> {% endcomment %}
       <td>{{ contact.name }}</td>
       <td>{{ contact.company }}</td>
       <td>{{ contact.mobile }}</td>

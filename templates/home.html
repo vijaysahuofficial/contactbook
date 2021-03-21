@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container ">
 <div class="row">
     <div class="col-sm-5">
         <h2 class="alert alert-info">
@@ -28,11 +28,11 @@
         <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
+     
       <th scope="col">Name</th>
       <th scope="col">Company</th>
       <th scope="col">Mobile No.</th>
-      <th scope="col">Action</th>
+      {% comment %} <th scope="col">Action</th> {% endcomment %}
 
     </tr>
   </thead>
@@ -40,18 +40,18 @@
 
   {% for contact in contacts %}
   <tr>
-      <th scope="row">{{ contact.id }}</th>
+     
       <td>{{ contact.name }}</td>
       <td>{{ contact.company }}</td>
       <td>{{ contact.mobile }}</td>
-      <td >
+      {% comment %} <td >
           <div class="btn-group" role="group">
          <a href="{% url 'del' contact.id %}" class="btn btn-outline-dark">Delete</a>
          <a href="{% url 'update' contact.id %}" class="btn btn-outline-danger">Edit</a>
               </div>
 
 
-      </td>
+      </td> {% endcomment %}
     </tr>
   {% endfor %}
 
