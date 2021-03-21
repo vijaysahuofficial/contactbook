@@ -6,7 +6,7 @@ from django.contrib import messages
 
 def home_view(request, *args, **kwargs):
     form = AddContactForm()
-    added_data = AddContact.objects.all().order_by('name')[:5]
+    added_data = AddContact.objects.all().order_by('-id')[:5]
     if request.method == "POST":
         form = AddContactForm(request.POST)
         if form.is_valid:
