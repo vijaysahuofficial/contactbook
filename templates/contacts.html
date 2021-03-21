@@ -26,7 +26,7 @@ Contacts
       <td>{{ contact.mobile }}</td>
       <td>
             <div class="btn-group" role="group">
-         <a href="{% url 'del' contact.id %}" class="btn btn-outline-dark">Delete</a>
+         <a href="{% url 'del_update' contact.id %}" class="btn btn-outline-dark">Delete</a>
          <a href="{% url 'update' contact.id %}" class="btn btn-outline-danger">Edit</a>
               </div>
       </td>
@@ -48,5 +48,9 @@ Contacts
 {% endif %}
 
     </div>
-
+<div class='text-center'>
+<a href='{% url 'home' %}' class='btn btn-outline-dark'>
+Back To Home
+</a>
+</div>
 {% endblock %}

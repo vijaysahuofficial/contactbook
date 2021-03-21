@@ -6,7 +6,7 @@ from django.contrib import messages
 
 def home_view(request, *args, **kwargs):
     form = AddContactForm()
-    added_data = AddContact.objects.all()
+    added_data = AddContact.objects.all().order_by('name')[:5]
     if request.method == "POST":
         form = AddContactForm(request.POST)
         if form.is_valid:
@@ -46,6 +46,12 @@ def del_contact(request, pk):
     return redirect('home')
 
 
+def del_contact_from_updatePage(request,pk):
+    d = AddContact.objects.get(pk=pk)
+    d.delete()
+    return redirect('contacts')
+
+
 def contacts_view(request, *args, **kwargs):
-    contacts = AddContact.objects.all()
+    contacts = AddContact.objects.all().order_by('name')
     return render(request, 'contacts.html', {'contacts': contacts})
